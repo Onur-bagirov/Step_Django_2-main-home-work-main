@@ -9,19 +9,21 @@
                 <th>Başlıq</th>
                 <th>Tarix</th>
                 <th>Müellif</th>
+                <th>Baxış</th>
             </tr>
         </thead>
         <tbody>
             {% for post in posts %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></td>
+                    <td><a href="{% url 'post_detail' post.id %}">{% if post.is_featured %}★ {% endif %}{{ post.title }}</a></td>
                     <td>{{ post.created_at }}</td>
                     <td>{{ post.author }}</td>
+                    <td>{{ post.views }}</td>
                 </tr>
             {% empty %}
                 <tr>
-                    <td colspan="4">Postu yoxdur</td>
+                    <td colspan="5">Postu yoxdur</td>
                 </tr>
             {% endfor %}
         </tbody>

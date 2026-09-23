@@ -1,9 +1,12 @@
 <div class="post-card">
-    <h2>{{ post.title }}</h2>
+    <h2>
+        {% if post.is_featured %}★ {% endif %}{{ post.title }}
+    </h2>
     <p class="post-meta">
         Müellif: <a href="{% url 'author_posts' post.author %}">@{{ post.author }}</a> | 
         Kateqoriya: {{ post.category }} | 
-        Tarix: {{ post.created_at }}
+        Tarix: {{ post.created_at }} |
+        Baxış: {{ post.views }}
     </p>
     <p>{{ post.content }}</p>
     <a href="{% url 'post_detail' post.id %}">Daha oxu</a>

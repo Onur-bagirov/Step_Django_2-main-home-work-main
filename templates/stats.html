@@ -3,7 +3,16 @@
 {% block content %}
     <h1>Statistika</h1>
     <div class="stats">
-        <p>Cəmi postlar: {{ posts|length }}</p>
-        <p>Cəmi kateqoriyalar: {{ categories|length }}</p>
+        <p>Cəmi postlar: {{ post_count }}</p>
+        <p>Cəmi kateqoriyalar: {{ category_count }}</p>
+        {% if top_post %}
+            <p>
+                Ən çox oxunan:
+                <a href="{% url 'post_detail' top_post.id %}">{{ top_post.title }}</a>
+                — {{ top_post.views }} baxış
+            </p>
+        {% else %}
+            <p>Hələ heç bir post yoxdur.</p>
+        {% endif %}
     </div>
 {% endblock %}

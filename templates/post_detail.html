@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <h1>{% if post.is_featured %}★ {% endif %}{{ post.title }}</h1>
     <p><strong>Müellif:</strong> {{ post.author }}</p>
     <p><strong>Kateqoriya:</strong> {{ post.category }}</p>
-    <p><strong>Yaradılma tarixi:</strong> {{ post.created_at }}</p>
+    <p><strong>Yaradılma tarixi:</strong> {{ post.created_at }} — {{ post.views }} baxış</p>
     <p>{{ post.content }}</p>
 {% endblock %}
