@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Statistika{% endblock %}
+{% block content %}
+    <h1>Statistika</h1>
+    <div class="stats">
+        <p>Cəmi postlar: {{ posts|length }}</p>
+        <p>Cəmi kateqoriyalar: {{ categories|length }}</p>
+    </div>
+{% endblock %}

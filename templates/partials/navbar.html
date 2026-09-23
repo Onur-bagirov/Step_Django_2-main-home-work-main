@@ -1,0 +1,8 @@
+<nav class="navbar">
+    <ul>
+        <li><a href="{% url 'posts_list' %}" {% if request.path == "/" %}class="active"{% endif %}>Postlar</a></li>
+        <li><a href="{% url 'about' %}" {% if request.path == "/about/" %}class="active"{% endif %}>Haqqımızda</a></li>
+        <li><a href="{% url 'category_list' %}" {% if request.path == "/categories/" %}class="active"{% endif %}>Kateqoriyalar</a></li>
+        <li><a href="{% url 'contact' %}" {% if request.path == "/contact/" %}class="active"{% endif %}>Elaqe</a></li>
+    </ul>
+</nav>

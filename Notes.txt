@@ -1,0 +1,23 @@
+Package manager
+cloude
+
+venv poetry uv
+
+mkdir Django1
+uv init
+uv venv
+uv sync
+source .venv/bin/activate -> venv i aktiv etdim
+uv add django(her hansi librarier name)
+
+django-admin startproject config .
+python manage.py runserver
+python manage.py makemigrates -> yazdigimiz yeni modelleri gormek ucun ilk run edirik
+python manage.py migrate -> table-lari db-a save edirik, create edirik
+python manage.py createsuperuser 
+python manage.py startapp blog
+
+
+1. aboutme adinda bir sehife olacaq -> bu sehifeye gedende Salam menim adim {oz adiniz}
+
+reverse (arasdirmaq)

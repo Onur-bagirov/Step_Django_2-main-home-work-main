@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <p>Description: {{ category.description }}</p>
+
+    <h2>Bu kateqoriyadaki postlar:</h2>
+    {% for post in posts %}
+        <h3>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </h3>
+        <p>{{ post.content }}</p>
+        <hr>
+    {% empty %}
+        <p>Bu kateqoriyada post yoxdur.</p>
+    {% endfor %}
+{% endblock %}

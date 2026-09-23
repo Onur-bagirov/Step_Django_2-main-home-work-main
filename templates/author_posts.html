@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ author }} - Postları{% endblock %}
+{% block content %}
+    <h1>{{ author }} - Postları</h1>
+    {% for post in posts %}
+        {% include 'partials/_post_card.html' %}
+    {% empty %}
+        <p>Bu müəllifin hələ postu yoxdur.</p>
+    {% endfor %}
+{% endblock %}

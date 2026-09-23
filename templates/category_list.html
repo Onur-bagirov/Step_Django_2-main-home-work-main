@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Kateqoriyalar{% endblock %}
+{% block content %}
+    <h1>Kateqoriyalar</h1>
+    <p>Bu sehifede butun kategoriyalar gosterilecek</p>
+
+    {% for category in categories %}
+        <h2>
+            <a href="{% url 'category_detail' category.slug %}">{{ category.name }}</a>
+        </h2>
+        <p>{{ category.description }}</p>
+        <hr>
+    {% empty %}
+        <p>Kateqoriya tapilmadi</p>
+    {% endfor %}
+{% endblock %}
